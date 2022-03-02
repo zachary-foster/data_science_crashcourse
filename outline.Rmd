@@ -1,0 +1,86 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What are Programs/scripts/software?
+
+A series of commands given to a computer.
+
+Commands are written in a **computer language**, which is a set of rules (aka **syntax**) for how to format commands in **plain text** files.
+For every computer languages there exists software able to convert commands written in that language into **machine code**.
+Machine code consists of a series of commands defined by **CPU**/**GPU** manufacturers and is the only language CPUs/GPUs can use.
+
+There are many different computer languages, each with a different intended use.
+They vary in efficiency, ease of use, compatibility, conceptual theme, and aesthetic style.
+Like human languages, computer languages evolve over time, trade concepts with one another, and diverge into independent languages. 
+New languages are invented constantly and old ones are slowly abandoned.
+
+## A survey of common computer languages and their use
+
+Computer languages are broadly grouped into **low-level languages** and **high-level languages**.
+Low-level languages include machine code and its (somewhat) human-readable analog called assembly code.
+These directly manipulate the CPU/GPU hardware and are therefore specific to each type of CPU/GPU **architecture**.
+High-level languages are meant to be independent of the hardware they run on and easier for humans to learn and understand.
+To accomplish these goals, high-level languages require software to convert them into a low-level language that can run on the user's computer.
+Data scientists, as well as most computer scientists, are unlikely to interact directly with low-level languages, so they will not be covered in detail here.
+
+Note: "high-level" and "low-level" are sometimes used as relative terms (e.g., The language C being called a "low-level" language relative to other high-level languages as defined above).
+
+High-level languages can be split conceptually into **compiled** and **interpreted** languages, depending on how/when they are converted to machine code.
+For compiled languages, a program called a compiler converts the high-level language into machine code all at once and produces an executable compatible with a particular computer architecture.
+The machine code executable is typically the only thing distributed to the users of the program.
+Examples of well-known compiled languages include C and C++.
+Compiled languages tend to prioritize efficiency.
+
+Interpreted languages are run using a program called an interpreter, which converts commands one at a time into machine code are they are received.
+This means that programmers can submit commands interactively and examine how the code is working with running an entire program.
+Interpreted languages are typically shared with users as-is and not in a machine code executable, with the assumption that user has an interpreter installed on their system.
+Examples of well-known compiled languages include bash, R, and python.
+Interpreted languages tend to prioritize ease of use.
+Data scientists generally use interpreted languages for most of their work, but resort to compiled languages when efficiency is needed. 
+
+Note: "compiled" and "interpreted" are not technically mutually exclusive and some languages, such as Java, have a blend of both concepts.
+
+Some common high level languages used in data science and what they are best at:
+
+* C: Small fast programs
+* C++: Small fast programs with more options than C, but slightly slower
+* Python: All-purpose and easy to understand.
+* R: All-purpose and easy to understand with an emphasis on statistics and graphing.
+* bash: Used to run other programs interactively or as scripts with a series of commands. 
+* SQL: Used to query and manage databases
+* Javascript: web applications and interactive data visualization
+
+
+## How programs are written
+
+Programs are written as plain text files.
+These files store only text, without any kind of non-text formatting, such as fonts, colors, line spacing, media, etc.
+Due to its simplicity, a given plain text file can be opened and edited on all computers using only programs included with it operating system.
+Plain text files can have multiple file extensions indicating what language the text contains, but this does not affect which programs can edit them.
+An R file might be called `code.R` and a python file `code.py` or either could be called `code.txt`, but all these are still plain text files.
+
+The minimum needed to write programs in a given language is a plain text editor and the interpreter/compiler for that language.
+There are also more complicated text editors designed for programming that combine plain text editing with the interpreter/compiler and other tools useful for organizing code.
+These are called **interactive development environments** or **IDEs**.
+Some IDEs specialized in a single language (e.g. RStudio) while others support multiple editors.
+IDEs generally have at least the following capabilities:
+
+* Plain text editor with language-specific **syntax highlighting**, tab-completion, and pop-up help information
+* A file explorer used to manage code files
+* A compiler or interpreter for the language
+* A way to explore the help documentation included in most programming languages
+* Tools to interact with a version control system (covered below)
+
+The use of a **version control** program, while not technically required for programming, is standard practice.
+Version control programs help programmers keep track of changes they make to programs and why they made them.
+They also allow multiple programmers to edit the same code on different computers and then merge the edits into a single version.
+The code for most programs is so large and complicated that most programmers do not remember how it all works at the same time, but instead work on small parts of it at a time.
+This means that edits to a part of the code often has unforeseen consequences for the program as a whole.
+Version control allows for such edits to be identified and reversed when needed.
+The most popular version control program is `git`.

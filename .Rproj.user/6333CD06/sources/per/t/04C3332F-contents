@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## what are Programs/scripts/software?
+
+A series of commands given to a computer.
+
+Commands are written in a **computer language**, which is a set of rules (aka **syntax**) for how to format commands in **plain text** files.
+For every computer languages there exists software able to convert commands written in that language into **machine code**.
+Machine code consists of a series of commands defined by **CPU**/**GPU** manufacturers and is the only language CPUs/GPUs can use.
+
+There are many different computer languages, each with a different intended use.
+They vary in efficiency, ease of use, compatibility, conceptual theme, and aesthetic style.
+Like human languages, computer languages evolve over time, trade concepts with one another, and diverge into independent languages. 
+New languages are invented constantly and old ones are slowly abandoned.
+
+## A survey of common computer languages and their use
+
+Computer languages are broadly grouped into **low-level languages** and **high-level languages**.
+Low-level languages include machine code and its human-readable representation called assembly code.
+These directly manipulate the CPU/GPU hardware and are therefore specific to each type of CPU/GPU **architecture**.
+High-level languages are meant to be independent of the hardware they run on and easier for humans to learn and understand.
+To accomplish these goals, high-level languages require software to convert them into a low-level language that can run on the user's computer.
+Data scientists, as well as most computer scientists, are unlikely to interact directly with low-level languages, so they will not be covered in detail here.
+
+Note: "high-level" and "low-level" are sometimes used as relative terms (e.g., The language C being called a "low-level" language relative to other high-level languages as defined above).
+
+High-level languages can be split conceptually into **compiled** and **interpreted** languages, depending on how/when they are converted to machine code.
+For compiled languages, a program called a compiler converts the high-level language into machine code all at once and produces an executable compatible with a particular computer architecture.
+The machine code executable is typically the only thing distributed to the users of the program.
+Examples of well-known compiled languages include C and C++.
+Interpreted languages are run using a program called an interpreter, which converts commands one at a time into machine code are they are received.
+This means that programmers and submit commands interactively and examine how the code is working easier.
+Interpreted languages are typically shared with users as-is and not in a machine code executable, with the assumption that user has an interpreter installed on their system.
+Examples of well-known compiled languages include R and python.
+Data scientists generally use interpreted languages for most of their work, due to their relative ease of use and compatibility with diverse hardware, but resort to compiled languages when efficiency is needed. 
+
+Note: "compiled" and "interpreted" are not precise terms and some languages, such as Java, have a blend of both concepts.
+
+how are programs written and saved
