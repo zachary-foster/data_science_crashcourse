@@ -1,6 +1,9 @@
 ---
 title: "Untitled"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r setup, include=FALSE}
@@ -17,7 +20,7 @@ Machine code consists of a series of commands defined by **CPU**/**GPU** manufac
 
 There are many different computer languages, each with a different intended use.
 They vary in efficiency, ease of use, compatibility, conceptual theme, and aesthetic style.
-Like human languages, computer languages evolve over time, trade concepts with one another, and diverge into independent languages. 
+Like human languages, computer languages evolve over time, trade concepts with one another, and diverge into independent languages.
 New languages are invented constantly and old ones are slowly abandoned.
 
 ## A survey of common computer languages and their use
@@ -42,20 +45,19 @@ This means that programmers can submit commands interactively and examine how th
 Interpreted languages are typically shared with users as-is and not in a machine code executable, with the assumption that user has an interpreter installed on their system.
 Examples of well-known compiled languages include bash, R, and python.
 Interpreted languages tend to prioritize ease of use.
-Data scientists generally use interpreted languages for most of their work, but resort to compiled languages when efficiency is needed. 
+Data scientists generally use interpreted languages for most of their work, but resort to compiled languages when efficiency is needed.
 
 Note: "compiled" and "interpreted" are not technically mutually exclusive and some languages, such as Java, have a blend of both concepts.
 
 Some common high level languages used in data science and what they are best at:
 
-* C: Small fast programs
-* C++: Small fast programs with more options than C, but slightly slower
-* Python: All-purpose and easy to understand.
-* R: All-purpose and easy to understand with an emphasis on statistics and graphing.
-* bash: Used to run other programs interactively or as scripts with a series of commands. 
-* SQL: Used to query and manage databases
-* Javascript: web applications and interactive data visualization
-
+-   C: Small fast programs
+-   C++: Small fast programs with more options than C, but slightly slower
+-   Python: All-purpose and easy to understand.
+-   R: All-purpose and easy to understand with an emphasis on statistics and graphing.
+-   bash: Used to run other programs interactively or as scripts with a series of commands.
+-   SQL: Used to query and manage databases
+-   Javascript: web applications and interactive data visualization
 
 ## How programs are written
 
@@ -71,11 +73,11 @@ These are called **interactive development environments** or **IDEs**.
 Some IDEs specialized in a single language (e.g. RStudio) while others support multiple editors.
 IDEs generally have at least the following capabilities:
 
-* Plain text editor with language-specific **syntax highlighting**, tab-completion, and pop-up help information
-* A file explorer used to manage code files
-* A compiler or interpreter for the language
-* A way to explore the help documentation included in most programming languages
-* Tools to interact with a version control system (covered below)
+-   Plain text editor with language-specific **syntax highlighting**, tab-completion, and pop-up help information
+-   A file explorer used to manage code files
+-   A compiler or interpreter for the language
+-   A way to explore the help documentation included in most programming languages
+-   Tools to interact with a version control system (covered below)
 
 The use of a **version control** program, while not technically required for programming, is standard practice.
 Version control programs help programmers keep track of changes they make to programs and why they made them.
@@ -84,3 +86,130 @@ The code for most programs is so large and complicated that most programmers do 
 This means that edits to a part of the code often has unforeseen consequences for the program as a whole.
 Version control allows for such edits to be identified and reversed when needed.
 The most popular version control program is `git`.
+
+## Project organization
+
+The importance of organizing data, code, and notes for a particular project is often overlooked when data science is taught.
+While developing and implementing good project organization habits takes some upfront work, good organization and notes will save time and effort in the long run.
+Data scientists deal with two general categories of projects: software and analyses.
+Each type of project will require a different type of organization.
+For software, the project format is determined by how the software will ultimately be installed and used.
+For example, an R package must follow the folder structure set by CRAN, the organization that hosts and curates the packages that can be installed with `install.packages`.
+A python module or set of command-line tools would have a much different folder structure.
+In contrast, folders that contain the code for an analysis differ based on personal preference and what the "deliverable" for the analysis is, but there are still some general guidelines that should be observed.
+
+### How to format a folder for data analysis
+
+-   A "README" file: This is meant to be the first thing a person new to the projects should read. It should summarize the purpose of the project and describe how it is organized. This can be very important for large projects. It is often written in the Markdown language.
+-   A "raw data" folder: This stores all input data used by the analysis. Things in this directory should not be modified or deleted in general.
+-   An "intermediate data" folder: This stores intermediate files produced by the analysis that are not useful results as is. This folder can be deleted.
+-   A "results" folder: This is where all code output goes (e.g. plots, tables) that represents the outcome of the analysis. Plots that appear in a publication would go here. This folder can be deleted.
+-   A "programs" or "bin" folder: This is where any software specific to the project goes. This might not always be needed and could be replaced by container systems.
+-   journal/log/diary file. This is where daily progress and notes are recorded. Good for remembering what you were doing
+
+If the analysis is for a publication, it might have the following additional things:
+
+-   A "publications" folder: Contains the source for the publication describing this analysis. This might also contain presentations or posters, or these can be in their own folders.
+-   A literature review: either a file or folder with information on relevant literature and notes
+
+## Git
+
+Git can be used from
+
+...
+
+
+## R 
+
+### Data types (aka classes)
+
+Every piece of data in R (and most programming languages) is an "object" or "instance" of a defined data type known as a "class".
+"Classes" are definitions for how to store and interact with a particular type of data.
+For example, you 
+
+Vectors:
+
+* numeric
+* character
+* logical
+* factor
+
+Multidimensional data types:
+
+* list: A list of R objects
+* data frame / tibble
+* matrix
+
+
+Exercises: 
+
+* What class is each column in the `iris` dataset? (use `class` function)
+
+```{r}
+hist(iris$Petal.Length)
+```
+
+
+
+## Functions
+
+```{r}
+my_mean <- function(input, na_rm = FALSE) {
+  
+  # Divides sum by length
+  output <- sum(input, na.rm = na_rm) / length(input)
+  output
+}
+
+
+greet <- function(alternate_greeting = NULL) {
+  if (! is.null(alternate_greeting)) {
+    cat(alternate_greeting)
+  } else {
+    cat("Hi!")
+  }
+}
+
+```
+
+
+## Loops
+
+```{r}
+library(purrr)
+map2_dbl(1:3, 1:3, `-`)
+iris
+```
+
+
+
+## Names
+
+```{r}
+x = 1:3
+names(x) <- c('a', 'b', 'c')
+```
+
+
+## Practice challenge 1
+
+use CSV here:
+
+Oregon_COUNTY.csv
+
+https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/SVI_documentation_2018.html    
+
+Question:
+
+Which counties in Oregon are most venerable in the event of an emergency?
+
+Plan:
+
+* Make new R project with "data" folder, R script, and README.md file
+* Import into R
+* Subset/select columns of interest
+* Make function to rank regions by vulnerability for each metric
+* Summarize the results in a new column
+* Sort data on regions by vulnerability score
+* Save results in a CSV file
+* Upload to Github
